@@ -1,1 +1,1 @@
-How is xiao jin?
+It is easier for us to chat than upwork.
