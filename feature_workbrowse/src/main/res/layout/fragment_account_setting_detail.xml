@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/login_background"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:visibility="gone"
+        android:id="@+id/loading_cl"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="5dp"
+        android:background="#AA000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ProgressBar
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/login_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+       >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+            <TextView
+                android:id="@+id/account_setting_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/account_settings"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/account_setting_detail_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/view_and_update_your_account_details_profile_and_more"
+                app:layout_constraintStart_toStartOf="@+id/account_setting_tv"
+                app:layout_constraintTop_toBottomOf="@+id/account_setting_tv" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/update_profile_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:padding="20dp"
+                app:layout_constraintStart_toStartOf="@id/account_setting_detail_tv"
+                app:layout_constraintTop_toBottomOf="@+id/account_setting_detail_tv">
+
+                <TextView
+                    android:id="@+id/update_name_or_profile_image_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/update_name_or_profile_image"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/bottom_line_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/lb_details_description_body_color"
+                    app:layout_constraintTop_toBottomOf="@id/update_name_or_profile_image_tv" />
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.35" />
+
+
+                <TextView
+                    android:id="@+id/first_name_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/first_name"
+                    app:layout_constraintStart_toStartOf="@id/bottom_line_1"
+                    app:layout_constraintBottom_toBottomOf="@+id/first_name_et"
+                    app:layout_constraintTop_toTopOf="@+id/first_name_et"/>
+
+                <EditText
+                    android:id="@+id/first_name_et"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:background="@drawable/border_background"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintStart_toStartOf="@id/guideline5"
+                    app:layout_constraintTop_toBottomOf="@id/bottom_line_1"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/last_name_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/last_name"
+                    app:layout_constraintStart_toStartOf="@id/bottom_line_1"
+                    app:layout_constraintTop_toTopOf="@+id/last_name_et"
+                    app:layout_constraintBottom_toBottomOf="@+id/last_name_et"/>
+
+                <EditText
+                    android:id="@+id/last_name_et"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="15dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:background="@drawable/border_background"
+                    app:layout_constraintStart_toStartOf="@id/guideline5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/first_name_et" />
+
+
+                <View
+                    android:id="@+id/bottom_line_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/lb_details_description_body_color"
+                    app:layout_constraintTop_toBottomOf="@id/last_name_et" />
+
+                <Button
+                    android:id="@+id/update_name_bt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/grey_dark"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:text="@string/save_changes"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/bottom_line_5" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/social_logins_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:padding="20dp"
+                app:layout_constraintStart_toStartOf="@id/account_setting_detail_tv"
+                app:layout_constraintTop_toBottomOf="@+id/update_profile_layout">
+
+
+                <TextView
+                    android:id="@+id/social_Login_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/manage_social_login"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/bottom_line_7"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/lb_details_description_body_color"
+                    app:layout_constraintTop_toBottomOf="@id/social_Login_tv" />
+
+                <TextView
+                    android:id="@+id/social_logins_detail_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/enable_or_disable_connected_social_services"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="@id/bottom_line_7"
+                    app:layout_constraintTop_toBottomOf="@+id/bottom_line_7" />
+
+
+                <ImageView
+                    android:id="@+id/google_account_iv"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/google_icon"
+                    app:layout_constraintStart_toStartOf="@id/social_logins_detail_tv"
+                    app:layout_constraintTop_toBottomOf="@id/social_logins_detail_tv" />
+
+
+                <TextView
+                    android:id="@+id/google_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/google"
+                    app:layout_constraintBottom_toBottomOf="@id/google_account_iv"
+                    app:layout_constraintStart_toEndOf="@+id/google_account_iv"
+                    app:layout_constraintTop_toTopOf="@+id/google_account_iv" />
+
+                <Button
+                    android:id="@+id/google_enable_bt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/grey_dark"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:text="@string/enable"
+                    app:layout_constraintBottom_toBottomOf="@id/google_account_iv"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/google_account_iv" />
+
+
+                <ImageView
+                    android:id="@+id/facebook_account_iv"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/facebook_icon"
+                    app:layout_constraintStart_toStartOf="@id/google_account_iv"
+                    app:layout_constraintTop_toBottomOf="@id/google_account_iv" />
+
+
+                <TextView
+                    android:id="@+id/facebook_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/facebook"
+                    app:layout_constraintBottom_toBottomOf="@id/facebook_account_iv"
+                    app:layout_constraintStart_toEndOf="@+id/facebook_account_iv"
+                    app:layout_constraintTop_toTopOf="@+id/facebook_account_iv" />
+
+                <com.facebook.login.widget.LoginButton
+                    android:id="@+id/facebook_btn"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="12dp"
+                    android:visibility="gone"
+                    android:src="@drawable/facebook_icon"
+                    tools:ignore="MissingConstraints" />
+                <Button
+                    android:id="@+id/facebook_enable_bt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/grey_dark"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:text="@string/enable"
+                    app:layout_constraintBottom_toBottomOf="@id/facebook_account_iv"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/facebook_account_iv" />
+
+
+                <ImageView
+                    android:id="@+id/twitter_account_iv"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/twitter_icon"
+                    app:layout_constraintStart_toStartOf="@id/facebook_account_iv"
+                    app:layout_constraintTop_toBottomOf="@id/facebook_account_iv" />
+
+
+                <TextView
+                    android:id="@+id/twitter_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/google"
+                    app:layout_constraintBottom_toBottomOf="@id/twitter_account_iv"
+                    app:layout_constraintStart_toEndOf="@+id/twitter_account_iv"
+                    app:layout_constraintTop_toTopOf="@+id/twitter_account_iv" />
+
+                <Button
+                    android:id="@+id/twitter_enable_bt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/grey_dark"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:text="@string/enable"
+                    app:layout_constraintBottom_toBottomOf="@id/twitter_account_iv"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/twitter_account_iv" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/update_password_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:padding="20dp"
+                app:layout_constraintStart_toStartOf="@id/social_logins_layout"
+                app:layout_constraintTop_toBottomOf="@+id/social_logins_layout">
+
+                <TextView
+                    android:id="@+id/update_password_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/update_password"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/bottom_line_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/lb_details_description_body_color"
+                    app:layout_constraintTop_toBottomOf="@id/update_password_tv" />
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.35" />
+
+
+                <TextView
+                    android:id="@+id/current_password_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/current_password"
+                    app:layout_constraintStart_toStartOf="@id/bottom_line_3"
+                    app:layout_constraintBottom_toBottomOf="@+id/current_password_et"
+                    app:layout_constraintTop_toTopOf="@+id/current_password_et"/>
+
+                <EditText
+                    android:id="@+id/current_password_et"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:background="@drawable/border_background"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintStart_toStartOf="@id/guideline1"
+                    app:layout_constraintTop_toBottomOf="@id/bottom_line_3"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/new_password_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/new_password"
+                    app:layout_constraintStart_toStartOf="@id/current_password_tv"
+                    app:layout_constraintTop_toTopOf="@+id/new_password_et"
+                    app:layout_constraintBottom_toBottomOf="@+id/new_password_et"/>
+
+                <EditText
+                    android:id="@+id/new_password_et"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="15dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:background="@drawable/border_background"
+                    app:layout_constraintStart_toStartOf="@id/guideline1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/current_password_et" />
+
+                <TextView
+                    android:id="@+id/confirm_password_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/confirm_password"
+                    app:layout_constraintStart_toStartOf="@id/new_password_tv"
+                    app:layout_constraintTop_toTopOf="@+id/confirm_password_et"
+                    app:layout_constraintBottom_toBottomOf="@+id/confirm_password_et"/>
+
+                <EditText
+                    android:id="@+id/confirm_password_et"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="15dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:background="@drawable/border_background"
+                    app:layout_constraintStart_toStartOf="@id/guideline1"
+                    app:layout_constraintTop_toBottomOf="@id/new_password_et"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+
+                <View
+                    android:id="@+id/bottom_line_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/lb_details_description_body_color"
+                    app:layout_constraintTop_toBottomOf="@id/confirm_password_et" />
+
+                <Button
+                    android:id="@+id/update_profile_bt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/grey_dark"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:text="@string/save_changes"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/bottom_line_4" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/update_account_preference_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:padding="20dp"
+                app:layout_constraintStart_toStartOf="@id/update_password_layout"
+                app:layout_constraintTop_toBottomOf="@+id/update_password_layout">
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.35" />
+
+                <TextView
+                    android:id="@+id/update_account_preference_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/update_name_or_profile_image"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/bottom_line_8"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/lb_details_description_body_color"
+                    app:layout_constraintTop_toBottomOf="@id/update_account_preference_tv" />
+
+                <TextView
+                    android:id="@+id/language_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/language"
+                    app:layout_constraintStart_toStartOf="@id/bottom_line_8"
+                    app:layout_constraintTop_toTopOf="@+id/language_sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/language_sp"/>
+
+                <Spinner
+                    android:id="@+id/language_sp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintStart_toStartOf="@id/guideline2"
+                    app:layout_constraintTop_toBottomOf="@id/bottom_line_8"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/country_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/country"
+                    app:layout_constraintStart_toStartOf="@id/language_tv"
+                    app:layout_constraintTop_toTopOf="@+id/country_sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/country_sp"/>
+
+                <Spinner
+                    android:id="@+id/country_sp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintStart_toStartOf="@id/guideline2"
+                    app:layout_constraintTop_toBottomOf="@id/language_sp"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/time_zone_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/timezone"
+                    app:layout_constraintStart_toStartOf="@id/country_tv"
+                    app:layout_constraintTop_toTopOf="@+id/time_zone_sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/time_zone_sp"/>
+
+                <Spinner
+                    android:id="@+id/time_zone_sp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintStart_toStartOf="@id/guideline2"
+                    app:layout_constraintTop_toBottomOf="@id/country_sp"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+
+                <View
+                    android:id="@+id/bottom_line_9"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/white"
+                    app:layout_constraintTop_toBottomOf="@id/time_zone_sp" />
+
+                <Button
+                    android:id="@+id/save_account_preferences_bt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/grey_dark"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:text="@string/save_changes"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/bottom_line_9" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/danger_zone_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:padding="20dp"
+                app:layout_constraintStart_toStartOf="@id/update_account_preference_layout"
+                app:layout_constraintTop_toBottomOf="@+id/update_account_preference_layout">
+
+                <TextView
+                    android:id="@+id/danger_zone_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/danger_zone"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/bottom_line_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@color/lb_details_description_body_color"
+                    app:layout_constraintTop_toBottomOf="@id/danger_zone_tv" />
+
+                <Button
+                    android:id="@+id/delete_account_bt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/grey_dark"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:text="@string/delete_account"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/bottom_line_10" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

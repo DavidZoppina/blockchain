@@ -1,0 +1,29 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-kapt'
+apply plugin: 'org.jlleitschuh.gradle.ktlint'
+
+android {
+    dataBinding{
+        enabled = true
+    }
+    viewBinding{
+        enabled = true
+    }
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation project(':presentation_shared')
+    implementation project(':route_shared')
+
+    // Kotlin
+    implementation Dependencies.kotlin
+
+    // AndroidX
+    implementation Dependencies.androidx_fragment
+    implementation project(path: ':feature_workbrowse')
+}

@@ -1,0 +1,15 @@
+<resources>
+    <color name="primary_color">#650000</color>
+    <color name="primary_dark_color">#250000</color>
+    <color name="background_color">#000000</color>
+    <color name="lb_default_brand_color">@color/primary_color</color>
+    <color name="lb_default_brand_color_dark">@color/background_color</color>
+    <color name="lb_basic_card_info_bg_color">@color/primary_color</color>
+    <color name="grey_dark">#F44336</color>
+    <color name="blue">#F44336</color>
+    <color name="login_background">#3F4243</color>
+    <color name="transparent">#25000000</color>
+    <color name="white">#fff</color>
+    <color name="detail_view_actionbar_background">@color/primary_color</color>
+    <color name="detail_view_background">@color/primary_dark_color</color>
+</resources>

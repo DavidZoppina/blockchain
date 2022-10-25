@@ -1,0 +1,55 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'org.jlleitschuh.gradle.ktlint'
+
+android {
+    defaultConfig {
+        buildConfigField "String", "TMDB_BASE_URL", "\"https://api.themoviedb.org/3/\""
+        buildConfigField "String", "FLICK_BASE_URL", "\"https://www.flicknplay.com/api/v1/\""
+        buildConfigField "String", "TMDB_FILTER_LANGUAGE", "\"en-US\""
+        buildConfigField "String", "FLICKNPLAY_BASE_URL", "\"https://www.flicknplay.com/api/v1/\""
+        buildConfigField "String", "FLICKNPLAY_FILTER_LANGUAGE", "\"en\""
+        buildConfigField "String", "FLICKNPLAY_FILTER_COUNTRY", "\"us\""
+    }
+    buildTypes {
+        debug {
+            buildConfigField "String", "TMDB_API_KEY", "\"5685cfb92c7c58771fb5c21199edcf13\""
+        }
+        release {
+            buildConfigField "String", "TMDB_API_KEY", "\"5685cfb92c7c58771fb5c21199edcf13\""
+
+        }
+    }
+}
+
+dependencies {
+    implementation project(':model_shared')
+
+    // Kotlin
+    implementation Dependencies.kotlin
+
+    // Dagger
+    implementation Dependencies.dagger
+    kapt Dependencies.dagger_compile
+
+    // Room components
+    api Dependencies.androidx_room
+    kapt Dependencies.androidx_room_compiler
+    implementation Dependencies.androidx_room_ktx
+    implementation Dependencies.androidx_room_rxjava
+
+    // Retrofit
+    implementation Dependencies.retrofit
+    implementation Dependencies.retrofit_converter_gson
+
+    // OkHttp
+    implementation Dependencies.okhttp
+    implementation Dependencies.logging_interceptor
+
+    // Gson
+    implementation Dependencies.gson
+
+    // Rx
+    implementation Dependencies.retrofit2_rxjava2_adapter
+}

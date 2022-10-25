@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/works/android/20220927/FLicknplay-ATV-intelij/feature_workbrowse/src/main/res/layout/fragment_login.xml" value="0.1171875" />
+        <entry key="..\:/works/android/20220927/FLicknplay-ATV-intelij/feature_workdetail/src/main/res/layout/activity_player.xml" value="0.184375" />
+        <entry key="..\:/works/android/20220927/FLicknplay-ATV-intelij/feature_workdetail/src/main/res/layout/fragment_player.xml" value="0.184375" />
+        <entry key="..\:/works/android/20220927/FLicknplay-ATV-intelij/feature_workdetail/src/main/res/layout/item_episode.xml" value="0.184375" />
+        <entry key="..\:/works/android/20220927/FLicknplay-ATV-intelij/feature_workdetail/src/main/res/layout/season_number_card.xml" value="0.184375" />
+        <entry key="..\:/works/android/20220927/FLicknplay-ATV-intelij/feature_workdetail/src/main/res/layout/text_icon_card.xml" value="0.1703125" />
+        <entry key="..\:/works/android/20220927/FLicknplay-ATV-main/feature_workdetail/src/main/res/layout/activity_player.xml" value="0.25" />
+        <entry key="..\:/works/android/20220927/FLicknplay-ATV-main/feature_workdetail/src/main/res/layout/fragment_player.xml" value="0.1703125" />
+        <entry key="..\:/works/android/20220927/FLicknplay-ATV-main/feature_workdetail/src/main/res/layout/item_episode.xml" value="0.1703125" />
+        <entry key="..\:/works/android/20220927/FLicknplay-ATV-main/feature_workdetail/src/main/res/layout/season_number_card.xml" value="0.1703125" />
+        <entry key="..\:/works/android/20220927/FLicknplay-ATV-main/feature_workdetail/src/main/res/layout/text_icon_card.xml" value="0.1703125" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
+</project>

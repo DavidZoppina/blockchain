@@ -1,0 +1,80 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply from: 'https://raw.githubusercontent.com/JakeWharton/SdkSearch/master/gradle/projectDependencyGraph.gradle'
+apply plugin: 'org.jlleitschuh.gradle.ktlint'
+
+android {
+
+    dataBinding{
+        enabled = true
+    }
+    viewBinding{
+        enabled = true
+    }
+
+    defaultConfig {
+        applicationId "com.andtv.flicknplay"
+        versionCode 13
+        versionName "3.0.5"
+        signingConfig signingConfigs.debug
+    }
+    buildTypes {
+        debug {
+            debuggable true
+            multiDexEnabled true
+            minifyEnabled false
+            shrinkResources false
+        }
+        release {
+            debuggable false
+            minifyEnabled true
+            shrinkResources true
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation project(':feature_workdetail')
+    implementation project(':feature_castdetail')
+    implementation project(':feature_search')
+    implementation project(':feature_recommendation')
+    implementation project(':feature_splash')
+    implementation project(':feature_workbrowse')
+    implementation project(':model_shared')
+    implementation project(':data_shared')
+    implementation project(':presentation_shared')
+    implementation project(':route_shared')
+
+
+    // Kotlin
+    implementation Dependencies.kotlin
+
+    // AndroidX
+    implementation Dependencies.androidx_leanback
+    implementation Dependencies.androidx_work
+    implementation Dependencies.androidx_work_rxjava2
+
+
+    // Retrofit
+    implementation Dependencies.retrofit
+
+    // Rx
+    implementation Dependencies.rxandroid
+
+    // Dagger
+    implementation Dependencies.dagger
+    kapt Dependencies.dagger_compile
+
+    // Timber
+    implementation Dependencies.timber
+
+    // Google Analytics
+    implementation Dependencies.firebase
+
+    implementation "org.jetbrains.kotlin:kotlin-reflect:1.6.20"
+}
+
+apply plugin: 'com.google.gms.google-services'

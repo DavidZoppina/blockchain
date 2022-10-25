@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.andtv.flicknplay"
+    tools:ignore="MissingLeanbackLauncher">
+
+
+    <uses-permission android:name="${applicationId}.ACCESS_VIDEO_DATA" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_DEVICE_CONFIG"
+        tools:ignore="ProtectedPermissions" />
+
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+    <uses-feature
+        android:name="android.software.leanback"
+        android:required="true" />
+   <!-- <uses-feature
+        android:name="android.hardware.microphone"
+        android:required="true"
+        tools:ignore="UnsupportedTvHardware" /-->
+
+    <application
+        android:name="com.andtv.flicknplay.application.FlicknplayApplication"
+        android:allowBackup="true"
+        android:banner="@drawable/app_banner"
+        android:icon="@drawable/app_banner"
+        android:label="@string/app_name"
+        android:logo="@drawable/app_banner"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        >
+    </application>
+
+
+
+
+
+
+</manifest>

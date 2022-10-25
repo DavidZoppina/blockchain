@@ -1,0 +1,58 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        google()
+        mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath Dependencies.build_gradle
+        classpath Dependencies.kotlin_plugin
+        classpath Dependencies.google_services
+        classpath Dependencies.ktlint
+        classpath Dependencies.ben_mane_gralde
+        classpath Dependencies.jetbrains
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10'
+        classpath 'com.google.gms:google-services:4.3.12'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        }
+    }
+
+
+subprojects {
+    afterEvaluate { project ->
+        if (project.hasProperty('android')) {
+            apply plugin: "com.github.ben-manes.versions"
+
+            android {
+                compileSdkVersion Config.compileSdk
+
+                defaultConfig {
+                    minSdkVersion Config.minSdk
+                    targetSdkVersion Config.targetSdk
+                }
+
+                compileOptions {
+                    sourceCompatibility Config.javaVersion
+                    targetCompatibility Config.javaVersion
+                }
+
+                kotlinOptions {
+                    jvmTarget = Config.jvmTarget
+                }
+            }
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

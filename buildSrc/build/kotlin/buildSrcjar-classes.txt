@@ -1,0 +1,1 @@
+E:\works\android\20220927\FLicknplay-ATV-intelij\buildSrc\build\classes\kotlin\main\Config.class;E:\works\android\20220927\FLicknplay-ATV-intelij\buildSrc\build\classes\kotlin\main\Dependencies.class;E:\works\android\20220927\FLicknplay-ATV-intelij\buildSrc\build\classes\kotlin\main\Versions.class

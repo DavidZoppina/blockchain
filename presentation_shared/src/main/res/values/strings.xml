@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Flicknplay</string>
+
+    <string name="movies">MOVIES</string>
+    <string name="tv_shows">TV SHOWS</string>
+
+    <string name="source_tmdb"></string>
+    <string name="source_flicknplay"></string>
+    <string name="empty_line">\n</string>
+
+    <!-- Error messages -->
+    <string name="error_fragment_message">Failed to load the data. Please check if the internet connection is working right.</string>
+    <string name="error_fragment_button">Try again</string>
+    <string name="prompt_password">Password</string>
+    <string name="prompt_phone">Username</string>
+    <string name="btn_login">Login</string>
+    <string name="remember_me">Stay signed in for a month</string>
+</resources>

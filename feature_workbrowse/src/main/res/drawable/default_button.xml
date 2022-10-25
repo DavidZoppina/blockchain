@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:exitFadeDuration="@android:integer/config_shortAnimTime">
+
+    <item android:drawable="@color/grey_dark" android:state_focused="true" android:state_pressed="false" />
+    <item android:drawable="@drawable/bg_grey_dark_round" android:state_pressed="true" />
+    <item android:drawable="@color/grey_dark" android:state_hovered="true" />
+    <item android:drawable="@drawable/bg_grey_round" />
+
+</selector>

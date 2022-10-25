@@ -1,0 +1,89 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'org.jlleitschuh.gradle.ktlint'
+
+android {
+    dataBinding{
+        enabled = true
+    }
+    viewBinding{
+        enabled = true
+    }
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation project(':model_shared')
+    implementation project(':data_shared')
+    implementation project(':presentation_shared')
+    implementation project(':route_shared')
+
+    // Kotlin
+    implementation Dependencies.kotlin
+
+    // AndroidX
+    implementation Dependencies.androidx_leanback
+    implementation Dependencies.androidx_core
+    implementation Dependencies.androidx_fragment
+    implementation Dependencies.androidx_lifecycle
+
+    // Rx
+    implementation Dependencies.rxandroid
+
+    // Glide
+    implementation Dependencies.glide
+
+    // Dagger
+    implementation Dependencies.dagger
+    implementation 'androidx.appcompat:appcompat:1.5.0'
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    kapt Dependencies.dagger_compile
+
+    // Retrofit
+    implementation Dependencies.retrofit
+
+    // Gson
+    implementation Dependencies.gson
+
+    // Timber
+    implementation Dependencies.timber
+
+    // Lottie
+    implementation Dependencies.lottie
+
+    // JUnit
+    testImplementation Dependencies.junit
+
+    // Mockito
+    testImplementation Dependencies.mockito_inline
+    testImplementation Dependencies.mockito_core
+    testImplementation Dependencies.mockito_kotlin
+
+    // Exoplayer
+
+    implementation Dependencies.exoplayer_hls
+    implementation Dependencies.exoplayer_core
+    implementation Dependencies.exoplayer_dash
+    implementation Dependencies.exoplayer_ui
+    implementation Dependencies.multidex
+
+    //googleSinIn
+    implementation Dependencies.google_signin
+
+    //facebook
+    //implementation Dependencies.facebook_signin
+    implementation Dependencies.facebook_sdk
+
+
+    //twitter
+//    implementation Dependencies.twitter_signin
+//    implementation Dependencies.twitter_coroutines
+//    implementation Dependencies.twitter_ui
+//    implementation Dependencies.twitter_mopub
+
+}

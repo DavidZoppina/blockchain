@@ -1,0 +1,84 @@
+/*
+ *
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
+ */
+
+package com.andtv.flicknplay.model.presentation.model
+
+import android.content.Context
+import android.graphics.Bitmap
+import android.graphics.drawable.Drawable
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.request.RequestOptions
+import com.bumptech.glide.request.target.CustomTarget
+import com.bumptech.glide.request.transition.Transition
+import com.andtv.flicknplay.model.data.remote.MovieCredits
+import com.andtv.flicknplay.model.domain.VideoDomainModel
+import java.io.Serializable
+
+/**
+ * Copyright (C) Flicknplay 18-04-2019.
+ */
+data class HistoryWorkViewModel(
+    var id: Int,
+    var originalLanguage: String? = null,
+    var overview: String? = null,
+    val source: String? = null,
+    var backdropUrl: String? = null,
+    var posterUrl: String? = null,
+    var title: String? = null,
+    var originalTitle: String? = null,
+    var releaseDate: String? = null,
+    var isFavorite: Boolean = false,
+    var type: HistoryWorkType,
+    var videos: VideoDomainModel? = VideoDomainModel(),
+    var credits: List<MovieCredits>? = listOf(),
+    var isSeries: Boolean? = null,
+    var episodes: Any? = null
+) : Serializable
+
+inline fun HistoryWorkViewModel.loadPoster(context: Context, crossinline result: (resource: Drawable) -> Unit) {
+    Glide.with(context)
+            .load(posterUrl)
+            .apply(RequestOptions().diskCacheStrategy(DiskCacheStrategy.ALL))
+            .into(object : CustomTarget<Drawable>() {
+                override fun onResourceReady(resource: Drawable, transition: Transition<in Drawable>?) {
+                    result(resource)
+                }
+
+                override fun onLoadCleared(placeholder: Drawable?) {
+                    // DO ANYTHING
+                }
+            })
+}
+
+inline fun HistoryWorkViewModel.loadBackdrop(context: Context, crossinline result: (resource: Bitmap) -> Unit) {
+    Glide.with(context)
+            .asBitmap()
+            .load(backdropUrl)
+            .apply(RequestOptions().diskCacheStrategy(DiskCacheStrategy.ALL))
+            .into(object : CustomTarget<Bitmap>() {
+                override fun onResourceReady(resource: Bitmap, transition: Transition<in Bitmap>?) {
+                    result(resource)
+                }
+
+                override fun onLoadCleared(placeholder: Drawable?) {
+                    // DO ANYTHING
+                }
+            })
+}
+
+enum class HistoryWorkType {
+    TV_SHOW,
+    MOVIE
+}

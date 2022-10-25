@@ -1,0 +1,32 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.andtv.flicknplay.search"
+    tools:ignore="MissingLeanbackLauncher">
+
+    <uses-feature
+        android:name="android.software.leanback"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+
+
+    <application>
+        <activity
+            android:name="com.andtv.flicknplay.search.presentation.ui.activity.SearchActivity"
+	    android:exported="false"
+            android:screenOrientation="landscape"
+            tools:ignore="AppLinkUrlError">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="@string/host_search"
+                    android:scheme="@string/schema" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

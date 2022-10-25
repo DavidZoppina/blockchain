@@ -1,0 +1,19 @@
+<resources>
+    <string name="cast">CAST</string>
+    <string name="videos">TRAILERS</string>
+    <string name="episodes">EPISODES</string>
+    <string name="play">PLAY</string>
+    <string name="recommended">RECOMMENDED</string>
+    <string name="similar">SIMILAR</string>
+    <string name="reviews">REVIEWS</string>
+    <string name="save_favorites">Add to favorites</string>
+    <string name="remove_favorites">Remove from favorites</string>
+    <string name="failed_open_video">Failed to open the video. Check if you have YouTube installed and try again.</string>
+    <string name="season">Season</string>
+    <string name="back">Back</string>
+    <string name="continue_watching">Continue Watching</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="google_key">271210348019-0vmf0c3lt559qjdjdlt7a4c8tjsnp65k.apps.googleusercontent.com</string>
+
+</resources>

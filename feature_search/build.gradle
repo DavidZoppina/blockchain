@@ -1,0 +1,47 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'org.jlleitschuh.gradle.ktlint'
+
+dependencies {
+    implementation project(':model_shared')
+    implementation project(':presentation_shared')
+    implementation project(':route_shared')
+
+    // Kotlin
+    implementation Dependencies.kotlin
+
+    // AndroidX
+    implementation Dependencies.androidx_leanback
+    implementation Dependencies.androidx_core
+    implementation Dependencies.androidx_fragment
+    implementation Dependencies.androidx_lifecycle
+
+    // Rx
+    implementation Dependencies.rxandroid
+
+    // Glide
+    implementation Dependencies.glide
+
+    // Dagger
+    implementation Dependencies.dagger
+    implementation project(path: ':feature_workdetail')
+    kapt Dependencies.dagger_compile
+
+    // Retrofit
+    implementation Dependencies.retrofit
+
+    // Timber
+    implementation Dependencies.timber
+
+    // Lottie
+    implementation Dependencies.lottie
+
+    // JUnit
+    testImplementation Dependencies.junit
+
+    // Mockito
+    testImplementation Dependencies.mockito_inline
+    testImplementation Dependencies.mockito_core
+    testImplementation Dependencies.mockito_kotlin
+}

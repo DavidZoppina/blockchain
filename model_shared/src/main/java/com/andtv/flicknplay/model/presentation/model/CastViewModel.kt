@@ -1,0 +1,53 @@
+/*
+ *
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
+ */
+
+package com.andtv.flicknplay.model.presentation.model
+
+import android.content.Context
+import android.graphics.drawable.Drawable
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.request.RequestOptions
+import com.bumptech.glide.request.target.CustomTarget
+import com.bumptech.glide.request.transition.Transition
+import java.io.Serializable
+
+/**
+ *
+ */
+data class CastViewModel(
+    var id: Int,
+    var name: String? = null,
+    var character: String? = null,
+    var birthday: String? = null,
+    val source: String? = null,
+    var deathDay: String? = null,
+    var biography: String? = null,
+    var thumbnailUrl: String? = null
+) : Serializable
+
+inline fun CastViewModel.loadThumbnail(context: Context, crossinline result: (resource: Drawable) -> Unit) {
+    Glide.with(context)
+            .load(thumbnailUrl)
+            .apply(RequestOptions().diskCacheStrategy(DiskCacheStrategy.ALL))
+            .into(object : CustomTarget<Drawable>() {
+                override fun onResourceReady(resource: Drawable, transition: Transition<in Drawable>?) {
+                    result(resource)
+                }
+
+                override fun onLoadCleared(placeholder: Drawable?) {
+                    // DO ANYTHING
+                }
+            })
+}
